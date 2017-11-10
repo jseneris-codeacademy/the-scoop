@@ -316,7 +316,7 @@ describe('Scoop - server.js: ', function() {
 
   });
 
-  xdescribe('/comments/:id DELETE', function() {
+  describe('/comments/:id DELETE', function() {
 
     beforeEach(function() {
       database.users['user'] = {
@@ -383,7 +383,7 @@ describe('Scoop - server.js: ', function() {
 
   });
 
-  xdescribe('/commnets/:id/upvote PUT', function() {
+  describe('/commnets/:id/upvote PUT', function() {
 
     beforeEach(function() {
       database.users['user'] = {
@@ -469,7 +469,7 @@ describe('Scoop - server.js: ', function() {
 
   });
 
-  xdescribe('/comments/:id/downvote PUT', function() {
+  describe('/comments/:id/downvote PUT', function() {
 
     beforeEach(function() {
       database.users['user'] = {
