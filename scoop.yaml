@@ -1,0 +1,29 @@
+articles:
+  '1':
+    commentIds:
+      - 1
+    comments: []
+    downvotedBy: []
+    id: 1
+    title: test
+    upvotedBy:
+      - john
+    url: www.espn.go.com
+    username: john
+comments:
+  '1':
+    articleId: 1
+    body: first comment
+    downvotedBy: []
+    id: 1
+    upvotedBy: []
+    username: john
+nextArticleId: 2
+nextCommentId: 2
+users:
+  john:
+    articleIds:
+      - 1
+    commentIds:
+      - 1
+    username: john

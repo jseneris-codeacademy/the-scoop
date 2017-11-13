@@ -340,6 +340,7 @@ function upvoteComment(url, request) {
   return response;
 
 }
+
 function downvoteComment(url, request) {
   const id = Number(url.split('/').filter(segment => segment)[1]);
   const username = request.body && request.body.username;
@@ -357,6 +358,31 @@ function downvoteComment(url, request) {
 
   return response;
 
+}
+
+const yaml = require('js-yaml');
+const fs = require('fs');
+
+function loadDatabase() {
+  try {
+    const savedDatabase = yaml.safeLoad(fs.readFileSync('scoop.yaml', 'utf8'));
+    return savedDatabase;
+  } catch (e) {
+      console.log(e);
+  }
+
+}
+
+function saveDatabase(){
+  fs.writeFileSync('scoop.yaml',
+    yaml.safeDump(database, {
+      'styles': {
+        '!!null': 'canonical' // dump null as ~
+      },
+      'sortKeys': true        // sort object keys
+      }
+    )
+  );
 }
 
 // Write all code above this line.
